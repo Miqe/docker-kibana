@@ -31,7 +31,7 @@ EXPOSE 5601
 
 # See https://github.com/elastic/kibana/issues/6057
 COPY config/kibana.yml /opt/kibana-$KIBANA_VERSION-linux-x86_64/config/kibana.yml
-RUN /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana 2>&1 | grep -m 1 "Optimization of .* complete in .* seconds"
+#RUN /opt/kibana-${KIBANA_VERSION}-linux-x86_64/bin/kibana 2>&1 | grep -m 1 "Optimization of .* complete in .* seconds"
 RUN rm -f /opt/kibana-$KIBANA_VERSION-linux-x86_64/config/kibana.yml
 
 ENTRYPOINT ["/run/entrypoint.sh"]
